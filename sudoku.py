@@ -1,38 +1,37 @@
-import sys,pygame as pg
+board = [
+    [7,8,0,4,0,0,1,2,0],
+    [6,0,0,0,7,5,0,0,9],
+    [0,0,0,6,0,1,0,7,8],
+    [0,0,7,0,4,0,2,6,0],
+    [0,0,1,0,5,0,9,3,0],
+    [9,0,4,0,6,0,0,0,5],
+    [0,7,0,3,0,0,0,1,2],
+    [1,2,0,0,0,7,4,0,0],
+    [0,4,9,2,0,6,0,0,7]
+]
 
-pg.init()
-
-WIDTH , HEIGHT = 500,500
-
-SCREEN = pg.display.set_mode((WIDTH,HEIGHT))
-
-
-def draw_background():
-		SCREEN.fill(pg.Color("White"))	#pg.Color() this gives you the list of all kind of color instead of looking for color code you could just write the color name  
-
-		pg.draw.rect(SCREEN,pg.Color("black"),pg.Rect(15,15,470,470),10)
-
-		i = 1
-		while i * 
-
-		pg.display.update()
-
-
-
-
-
-
-
-
-## Main game loop 
-
-
-def Game_Loop():
-	for event in pg.event.get():
-		if event.type == pg.QUIT:
-			sys.exit()
-		draw_background()	
-		pg.display.flip()
+def print_board(board):
 	
-while True:
-	Game_Loop();
+	for i in range(len(board)):
+
+		if i % 3 == 0 and i != 0 :
+			print("- - - - - - - - - - - - - - - -  ")
+		for	 j in range(len(board)):
+			if j % 3 == 0 and j != 0:
+				print("|",end=" ")
+
+			if j == 8:
+				print(board[i][j])
+			else:
+				print(str(board[i][j]) + " " , end = "")			 						
+		print()
+
+def find_empty(board):
+	for i  in len(board):	
+		for j in len(board):				
+				if board[i][j] == 0:			
+
+		
+
+
+print_board(board)
